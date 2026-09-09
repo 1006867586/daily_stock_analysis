@@ -97,7 +97,7 @@ dependencies = [
     "jinja2>=3.1.0",
 
     # FastAPI & Server
-    "fastapi>=0.109.0",
+    "fastapi[standard]>=0.109.0",
     "uvicorn[standard]>=0.27.0",
     "python-multipart>=0.0.6",
 ]
