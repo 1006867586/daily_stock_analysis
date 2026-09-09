@@ -32,7 +32,7 @@ name = "daily_stock_analysis"
 version = "0.1.0"
 license = "MIT"
 license-files = ["LICENSE"]
-requires-python = ">=3.10"
+requires-python = ">=3.11,<3.12"
 dependencies = [
     # Core
     "python-dotenv>=1.0.0",
@@ -103,5 +103,5 @@ dependencies = [
 ]
 
 [build-system]
-requires = ["setuptools>=61.0", "pip>=24.0"]  # 指定较新版本的 pip
+requires = ["setuptools>=61.0", "pip>=24.0"]
 build-backend = "setuptools.build_meta"
