@@ -37,6 +37,9 @@ from src.config import setup_env
 _INITIAL_PROCESS_ENV = dict(os.environ)
 setup_env()
 from api.app import app
+@app.get("/")
+async def root():
+    return {"status": "ok"}
 logger = logging.getLogger(__name__)
 logger.info(f"🔍 app 已加载，路由数量: {len(app.routes)}")
 # 代理配置 - 通过 USE_PROXY 环境变量控制，默认关闭
