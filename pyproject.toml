@@ -26,3 +26,78 @@ skip = [".git", "__pycache__", ".env", "venv", ".venv"]
 [tool.bandit]
 exclude_dirs = ["tests", "test_*.py"]
 skips = ["B101"]  # assert 语句在测试中是允许的
+
+[project]
+name = "daily_stock_analysis"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    # Core
+    "python-dotenv>=1.0.0",
+    "tenacity>=8.2.0",
+    "sqlalchemy>=2.0.0",
+    "schedule>=1.2.0",
+    "exchange-calendars>=4.13.0",
+
+    # Data sources (ordered by priority)
+    "efinance>=0.5.5",
+    "akshare>=1.12.0",
+    "tushare>=1.4.0",
+    "pytdx>=1.72",
+    "baostock>=0.8.0",
+    "yfinance>=0.2.0",
+    # Conditional: longbridge
+    "longbridge==0.2.74; platform_system == 'Linux' and python_version < '3.12'",
+    "longbridge>=4.0.5,<5; platform_system != 'Linux' or python_version >= '3.12'",
+    "tickflow>=0.1.24",
+    "futu-api==10.8.6808",
+
+    # Feishu
+    "lark-oapi>=1.0.0",
+
+    # Data processing
+    "pandas>=2.0.0",
+    "pypinyin>=0.50.0",
+    "openpyxl>=3.1.0",
+    "numpy>=1.24.0",
+    "json-repair>=0.55.1",
+    "orjson>=3.10,<4",
+
+    # AI
+    "litellm>=1.80.10,!=1.82.7,!=1.82.8,<1.99.0",
+    "tiktoken>=0.8.0,<0.12.0",
+    "openai>=1.0.0",
+    "PyYAML>=6.0",
+
+    # Search
+    "tavily-python>=0.3.0",
+    "google-search-results>=2.4.0",
+
+    # Network
+    "requests>=2.31.0",
+    "markdown2>=2.4.0",
+    "imgkit>=1.2.0",
+    "fake-useragent>=1.4.0",
+    "httpx[socks]",
+    "dingtalk-stream>=0.24.3",
+
+    # Discord
+    "discord.py>=2.0.0",
+    "PyNaCl>=1.5.0",
+
+    # Web content
+    "newspaper3k>=0.2.8",
+    "lxml_html_clean",
+
+    # Report template
+    "jinja2>=3.1.0",
+
+    # FastAPI & Server
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "python-multipart>=0.0.6",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
