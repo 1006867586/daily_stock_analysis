@@ -24,6 +24,8 @@ A股自选股智能分析系统 - 主调度程序
 from __future__ import annotations
 
 import json
+import logging
+import os
 import multiprocessing
 import os
 from pathlib import Path
