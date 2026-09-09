@@ -30,6 +30,8 @@ skips = ["B101"]  # assert 语句在测试中是允许的
 [project]
 name = "daily_stock_analysis"
 version = "0.1.0"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 dependencies = [
     # Core
@@ -84,7 +86,9 @@ dependencies = [
     # Discord
     "discord.py>=2.0.0",
     "PyNaCl>=1.5.0",
-
+    
+    "orjson>=3.10.0",  
+    "cryptography>=42.0.0", 
     # Web content
     "newspaper3k>=0.2.8",
     "lxml_html_clean",
@@ -99,5 +103,5 @@ dependencies = [
 ]
 
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "pip>=24.0"]  # 指定较新版本的 pip
 build-backend = "setuptools.build_meta"
