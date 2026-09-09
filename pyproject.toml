@@ -18,8 +18,7 @@ exclude = '''
 )/
 '''
 
-[tool.fastapi]
-app = "server:app"
+
 
 [tool.isort]
 profile = "black"
